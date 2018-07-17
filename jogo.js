@@ -20,10 +20,11 @@ function iniciaJogo() {
   document.getElementById('baloes_inteiros').innerHTML = qtde_baloes;
   document.getElementById('baloes_estourados').innerHTML = 0;
   cria_baloes(qtde_baloes);
-  contagem_segundos(tempo_segundos);
+  contagem_segundos(2);
 }
 
 function game_over(){
+  remove_eventos_baloes();
   alert('Você não conseguiu extourar todos os balões antes do tempo acabar!');
   for(var i = 1; i <= qtde_baloes; i++){
     alert('b'+i);
@@ -88,5 +89,14 @@ function situacaoJogo(baloes_inteiros){
   if(baloes_inteiros == 0){
     alert('Parabéns, você conseguiu estourar todos os balões a tempo!');
     clearTimeout(timerID);
+  }
+}
+
+function remove_eventos_baloes() {
+  var i = 1;
+
+  while(document.getElementById('b'+i)){
+    document.getElementById('b'+i).onclick = '';
+    i++;
   }
 }
