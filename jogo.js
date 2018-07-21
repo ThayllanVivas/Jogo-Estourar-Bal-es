@@ -20,7 +20,7 @@ function iniciaJogo() {
   document.getElementById('baloes_inteiros').innerHTML = qtde_baloes;
   document.getElementById('baloes_estourados').innerHTML = 0;
   cria_baloes(qtde_baloes);
-  contagem_segundos(2);
+  contagem_segundos(tempo_segundos);
 }
 
 function game_over(){
